@@ -1,5 +1,4 @@
 #!/bin/bash
-
 DEFAULT_VH_ROOT='/var/www/vhosts'
 VH_DOC_ROOT=''
 APP=''
@@ -16,7 +15,7 @@ MA_COMPOSER='/usr/local/bin/composer'
 MA_VER='2.4.2'
 PS_VER='1.7.7.3'
 EMAIL='test@example.com'
-PS_BACK_URL='admin'
+PS_BACK_URL=''
 APP_ACCT=''
 APP_PASS=''
 MA_BACK_URL=''
@@ -91,6 +90,7 @@ gen_pass(){
     APP_PASS=$(openssl rand -hex 16)
 	APP_ACCT="admin${APP_STR}"
 	MA_BACK_URL="admin_${APP_STR}"
+	PS_BACK_URL="admin_${APP_STR}"
 }
 
 get_owner(){
@@ -776,6 +776,12 @@ install_prestashop(){
             --password=${APP_PASS};
     fi
     mv install install.bk
+    if [ -d admin ]; then 
+	    mv admin ${PS_BACK_URL}
+    else 
+	    echoY 'admin folder not found!'
+	    PS_BACK_URL='admin'
+    fi	
 }    
 
 install_ps_cache(){
