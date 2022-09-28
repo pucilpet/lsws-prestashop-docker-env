@@ -37,7 +37,7 @@ The docker image installs the following packages on your system:
 |MariaDB|[Stable version: 10.5](https://hub.docker.com/_/mariadb)|
 |PHP|[Latest PrestaShop supported version](http://rpms.litespeedtech.com/debian/)|
 |ACME|[Latest from ACME official](https://github.com/acmesh-official/get.acme.sh)|
-|PrestaShop|[1.7.7.3](https://www.prestashop.com/en/versions)|
+|PrestaShop|[1.7.8.7](https://www.prestashop.com/en/versions)|
 |LSCache|[Latest version](hhttps://www.litespeedtech.com/products/cache-plugins/prestashop-acceleration/download)|
 |phpMyAdmin|[Latest from dockerhub](https://hub.docker.com/r/bitnami/phpmyadmin/)|
 

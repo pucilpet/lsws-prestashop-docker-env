@@ -13,7 +13,7 @@ THEME='twentytwenty'
 LSDIR='/usr/local/lsws'
 MA_COMPOSER='/usr/local/bin/composer'
 MA_VER='2.4.2'
-PS_VER='1.7.7.3'
+PS_VER='1.7.8.7'
 EMAIL='test@example.com'
 PS_BACK_URL=''
 APP_ACCT=''
@@ -857,7 +857,7 @@ main(){
 		#store_access
 		#exit 0	
 	elif [ "${APP}" = 'prestashop' ] || [ "${APP}" = 'P' ]; then
-	    prevent_php
+	    #prevent_php
 		check_sql_native
         install_prestashop
 		install_ps_cache
