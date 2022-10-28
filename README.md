@@ -4,7 +4,7 @@
 [<img src="https://img.shields.io/badge/slack-LiteSpeed-blue.svg?logo=slack">](litespeedtech.com/slack) 
 [<img src="https://img.shields.io/twitter/follow/litespeedtech.svg?label=Follow&style=social">](https://twitter.com/litespeedtech)
 
-Install a PrestaShop container with LiteSpeed stable version based on Ubuntu 20.04 Linux.
+Install a PrestaShop container with LiteSpeed stable version based on Ubuntu 22.04 Linux.
 
 ### Prerequisites
 1. [Install Docker](https://www.docker.com/)
@@ -21,7 +21,7 @@ git clone https://github.com/Code-Egg/lsws-prestashop-docker-env.git
 ```
 Open a terminal, `cd` to the folder in which `docker-compose.yml` is saved, and run:
 ```
-docker-compose up
+docker compose up
 ```
 
 Note: If you wish to run a single web server container, please see the [usage method here](https://github.com/litespeedtech/lsws-dockerfiles#usage).
@@ -32,7 +32,7 @@ The docker image installs the following packages on your system:
 
 |Component|Version|
 | :-------------: | :-------------: |
-|Linux|Ubuntu 20.04|
+|Linux|Ubuntu 22.04|
 |LiteSpeed|[Latest version](https://www.litespeedtech.com/products/litespeed-web-server/download)|
 |MariaDB|[Stable version: 10.5](https://hub.docker.com/_/mariadb)|
 |PHP|[Latest PrestaShop supported version](http://rpms.litespeedtech.com/debian/)|
@@ -80,11 +80,11 @@ Cloned project
 ### Starting a Container
 Start the container with the `up` or `start` methods:
 ```
-docker-compose up
+docker compose up
 ```
 You can run with daemon mode, like so:
 ```
-docker-compose up -d
+docker compose up -d
 ```
 The container is now built and running. 
 
@@ -92,12 +92,12 @@ Note: The container will auto-apply a 15-day trial license. Please contact LiteS
 
 ### Stopping a Container
 ```
-docker-compose stop
+docker compose stop
 ```
 ### Removing Containers
 To stop and remove all containers, use the `down` command:
 ```
-docker-compose down
+docker compose down
 ```
 ### Setting the WebAdmin Password
 We strongly recommend you set your personal password right away.
@@ -149,6 +149,19 @@ Use the root domain in this command, and it will check for a certificate and aut
 ```
 ./bin/acme.sh [-D, --domain] example.com
 ```
+
+Other parameters:
+
+  * [`-r`, `--renew`]: Renew a specific domain with -D or --domain parameter if posibile. To force renew, use -f parameter.
+
+  * [`-R`, `--renew-all`]: Renew all domains if possible. To force renew, use -f parameter.  
+
+  * [`-f`, `-F`, `--force`]: Force renew for a specific domain or all domains. 
+
+  * [`-v`, `--revoke`]: Revoke a domain.  
+
+  * [`-V`, `--remove`]: Remove a domain.   
+  
 ### Updating Web Server
 To upgrade the web server to latest stable version, run the following:
 ```
@@ -193,7 +206,7 @@ RUN apt-get update && apt-get install lsphp74-pspell
 ```
 4. Build and start it with command:
 ```
-docker-compose up --build
+docker compose up --build
 ```
 
 ## Support & Feedback
