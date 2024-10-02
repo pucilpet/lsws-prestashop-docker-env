@@ -32,12 +32,12 @@ The docker image installs the following packages on your system:
 
 |Component|Version|
 | :-------------: | :-------------: |
-|Linux|Ubuntu 22.04|
+|Linux|Ubuntu 24.04|
 |LiteSpeed|[Latest version](https://www.litespeedtech.com/products/litespeed-web-server/download)|
 |MariaDB|[Stable version: 10.5](https://hub.docker.com/_/mariadb)|
 |PHP|[Latest PrestaShop supported version](http://rpms.litespeedtech.com/debian/)|
 |ACME|[Latest from ACME official](https://github.com/acmesh-official/get.acme.sh)|
-|PrestaShop|[1.7.8.7](https://www.prestashop.com/en/versions)|
+|PrestaShop|[8.1.7](https://www.prestashop.com/en/versions)|
 |LSCache|[Latest version](hhttps://www.litespeedtech.com/products/cache-plugins/prestashop-acceleration/download)|
 |phpMyAdmin|[Latest from dockerhub](https://hub.docker.com/r/bitnami/phpmyadmin/)|
 
@@ -191,12 +191,12 @@ bash bin/webadmin.sh [-S, --serial] TRIAL
 After installation, you can use phpMinAdmin to access the database by visiting http://127.0.0.1:8080 or https://127.0.0.1:8443. The default username is `root`, and the password is the same as the one you supplied in the `.env` file.
 
 ## Customization
-If you want to customize the image by adding some packages, e.g. `lsphp74-pspell`, just extend it with a Dockerfile. 
+If you want to customize the image by adding some packages, e.g. `lsphp83-pspell`, just extend it with a Dockerfile. 
 1. We can create a `custom` folder and a `custom/Dockerfile` file under the main project. 
 2. Add the following example code to `Dockerfile` under the custom folder
 ```
 FROM litespeedtech/litespeed:latest
-RUN apt-get update && apt-get install lsphp74-pspell
+RUN apt-get update && apt-get install lsphp83-pspell
 ```
 3. Add `build: ./custom` line under the "image: litespeedtech" of docker-composefile. So it will looks like this 
 ```
