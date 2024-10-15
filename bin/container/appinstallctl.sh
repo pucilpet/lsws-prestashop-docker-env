@@ -53,6 +53,9 @@ help_message(){
         "2")
             echow 'Service finished, enjoy your accelarated LiteSpeed server!'
         ;;
+        "3")
+            echo 'To improve the page speed, please follow https://docs.litespeedtech.com/lscache/lscps/installation/ to install the LSCPS plugin!'
+        ;;		
     esac  
 }
 
@@ -860,7 +863,8 @@ main(){
 	    #prevent_php
 		check_sql_native
         install_prestashop
-		install_ps_cache
+		#install_ps_cache
+		help_message 3
 		change_owner
 		show_access
 		store_access
